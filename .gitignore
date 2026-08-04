@@ -1,0 +1,19 @@
+# Carpetas de compilación
+bin/
+obj/
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Base de datos SQLite (opcional)
+*.db
+*.db-shm
+*.db-wal
+
+# Configuración local
+appsettings.Development.json
+
+# Archivos de usuario
+*.user
+*.suo

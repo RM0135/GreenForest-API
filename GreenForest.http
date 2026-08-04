@@ -1,0 +1,6 @@
+@GreenForest_HostAddress = http://localhost:5197
+
+GET {{GreenForest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
