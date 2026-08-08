@@ -299,7 +299,8 @@ Endpoint:
 
 
 POST /api/IA/chat
-
+ # Video de youtube
+ ## https://youtu.be/EyEWva4IqYE
 
 Ejemplo de solicitud:
 
@@ -359,4 +360,3 @@ Mejorar la seguridad de contraseñas.
 Implementar pruebas unitarias.
 Agregar paginación y filtros.
 Realizar despliegue en un servidor.
-https://youtu.be/ZT-1LXD6oIE
