@@ -17,7 +17,7 @@ public class IAController : ControllerBase
     [HttpPost("chat")]
     public async Task<ActionResult<GeminiResponse>> Chat(GeminiRequest request)
     {
-        var respuesta = await _geminiService.PreguntarGemini(request.Pregunta);
+        var respuesta = await _geminiService.PreguntarLibre(request.Pregunta);
 
         return Ok(new GeminiResponse
         {

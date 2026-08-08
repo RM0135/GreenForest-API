@@ -4,9 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using GreenForest.AI;
 using System.Text.Json.Serialization;
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<GreenForestContext>(options =>
-    options.UseSqlite(
+    options.UseNpgsql(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Controllers
@@ -18,10 +20,6 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     });
 
-// SQLite
-builder.Services.AddDbContext<GreenForestContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
-
 // Servicios
 builder.Services.AddScoped<UsuarioService>();
 
@@ -29,7 +27,6 @@ builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient<GeminiService>();
-builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -37,7 +34,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<GreenForestContext>();
-    context.Database.EnsureCreated();
+    context.Database.Migrate();
     DbSeeder.Seed(context);
 }
 
