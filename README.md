@@ -6,7 +6,7 @@ GreenForest API es una aplicación backend desarrollada en C# utilizando ASP.NET
 
 El proyecto tiene como objetivo gestionar información relacionada con procesos de reforestación, permitiendo administrar usuarios, proyectos, árboles, especies, organizaciones y reportes.
 
-La API implementa operaciones CRUD para las diferentes entidades, utiliza Entity Framework Core para la conexión con la base de datos SQLite y cuenta con una integración con Google Gemini para realizar consultas mediante inteligencia artificial.
+La API implementa operaciones CRUD para las diferentes entidades, utiliza Entity Framework Core para la conexión con la base de datos SupaBase y cuenta con una integración con Google Gemini para realizar consultas mediante inteligencia artificial.
 
 ---
 
@@ -21,7 +21,7 @@ Desarrollar una API REST que permita gestionar proyectos de reforestación media
 - Crear una API REST utilizando ASP.NET Core 8.
 - Implementar operaciones CRUD para las entidades principales.
 - Utilizar Entity Framework Core para manejar la base de datos.
-- Trabajar con una base de datos SQLite.
+- Trabajar con una base de datos SupaBase.
 - Aplicar DTOs para manejar la transferencia de información.
 - Implementar relaciones entre entidades.
 - Crear servicios para manejar lógica de negocio.
@@ -35,7 +35,7 @@ Desarrollar una API REST que permita gestionar proyectos de reforestación media
 - C#
 - ASP.NET Core 8
 - Entity Framework Core
-- SQLite
+- SupaBase
 - Swagger / OpenAPI
 - Google Gemini API
 - Git y GitHub
@@ -156,7 +156,7 @@ Se utiliza Google Gemini para responder preguntas relacionadas con el proyecto m
 
 # Base de datos
 
-El proyecto utiliza SQLite como base de datos.
+El proyecto utiliza SupaBase como base de datos.
 
 La conexión se encuentra configurada en el archivo:
 
